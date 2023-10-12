@@ -46,3 +46,17 @@ class Island:
             RandomGen.random() * 500,
             RandomGen.randint(0, 300),
         )
+    
+    def __lt__(self, other):
+        # Define how one Island instance is less than another
+        return (self.money, self.marines) < (other.money, other.marines)
+    
+
+    def __le__(self, other):
+    # Define how one Island instance is less than or equal to another
+        return self.money <= other.money
+
+
+    def __eq__(self, other):
+        # Define how two Island instances are equal
+        return (self.money, self.marines) == (other.money, other.marines)
