@@ -1,4 +1,8 @@
 from island import Island
+from algorithms import binary_search
+from data_structures.bst import BinarySearchTree
+from data_structures.heap import MaxHeap
+import math
 
 class Mode2Navigator:
     """
@@ -9,7 +13,8 @@ class Mode2Navigator:
         """
         Student-TODO: Best/Worst Case
         """
-        raise NotImplementedError()
+        self.n_pirates = n_pirates
+        self.islands = []
 
     def add_islands(self, islands: list[Island]):
         """
@@ -22,3 +27,8 @@ class Mode2Navigator:
         Student-TODO: Best/Worst Case
         """
         raise NotImplementedError()
+    
+
+    def calculate_profitability(self, island, pirates):
+        money = min((pirates / island.marines* island.money) , island.money)
+        return math.ceil(money)
