@@ -54,9 +54,19 @@ class Island:
 
     def __le__(self, other):
     # Define how one Island instance is less than or equal to another
-        return self.money <= other.money
+        return (self.money, self.marines) <= (other.money, other.marines)
 
 
     def __eq__(self, other):
         # Define how two Island instances are equal
         return (self.money, self.marines) == (other.money, other.marines)
+    
+    
+    def __gt__(self, other):
+        # Define how two Island instances are greater than another
+        return (self.money, self.marines) > (other.money, other.marines)
+    
+    
+    def __ge__(self, other):
+        # Define how two Island instances are less than or equal to another
+        return (self.money, self.marines) >= (other.money, other.marines)
